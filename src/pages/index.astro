@@ -195,6 +195,9 @@ import { site, locations, products, gallery } from '../data/site';
   // video se pušta samo ako korisnik nije uključio smanjenje animacija
   const video = document.querySelector<HTMLVideoElement>('.hero__video');
   if (video && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    video.play().catch(() => {});
+    const play = () => video.play().catch(() => {});
+    play();
+    // browser pauzira video u skrivenoj kartici; nastavi kad se korisnik vrati
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) play(); });
   }
 </script>
