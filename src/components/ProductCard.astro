@@ -1,0 +1,21 @@
+---
+import type { Product } from '../data/site';
+import { site } from '../data/site';
+
+interface Props { product: Product }
+const { product: p } = Astro.props;
+const cta = p.cta ?? { label: 'Cijena na upit', href: site.phone.href };
+---
+<article class="card reveal">
+  <div class:list={['card__img', { 'card__img--dark': p.contain }]}>
+    <img src={`/assets/img/${p.image}`} alt={p.alt} loading="lazy">
+    {p.tag && <span class:list={['card__tag', { 'card__tag--hot': p.hot }]}>{p.tag}</span>}
+  </div>
+  <div class="card__body">
+    <h3>{p.name}</h3>
+    <p>{p.text}</p>
+    {p.price
+      ? <span class="card__price">{p.price.amount} <small>{p.price.unit}</small></span>
+      : <a href={cta.href} class="card__link">{cta.label}</a>}
+  </div>
+</article>

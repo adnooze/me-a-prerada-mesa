@@ -3,3 +3,6 @@ raw/
 .DS_Store
 Thumbs.db
 .impeccable/
+node_modules/
+dist/
+.astro/

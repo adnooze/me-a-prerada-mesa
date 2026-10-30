@@ -1,0 +1,188 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import Icon from '../components/Icon.astro';
+import { site, locations, products, gallery } from '../data/site';
+---
+<Layout
+  title="Meša prerada mesa · Zenica — tradicija, kvalitet, domaće"
+  description="Mesarski obrt „Meša“ iz Zenice: hadžijska sudžuka, suho meso, kaurma, ćevapi i svježe halal meso. HACCP i halal certifikat, tradicija od 1998. Dostava za cijelu BiH."
+>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="wrap hero__content">
+      <p class="script script--light">domaće je domaće</p>
+      <h1>Tradicija, kvalitet,<br>domaće!</h1>
+      <p class="hero__lead">Hadžijska sudžuka, suho meso, kaurma i svježe halal meso iz Zenice. Spremljeno po starim recepturama, s dostavom na vaša vrata, bilo gdje u BiH.</p>
+      <div class="hero__actions">
+        <a href="#proizvodi" class="btn btn--red">Pogledaj proizvode</a>
+        <a href={site.phone.href} class="btn btn--ghost">Pozovi {site.phone.label}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ O NAMA ============ -->
+  <section class="about topo" id="o-nama">
+    <div class="wrap about__grid">
+      <div class="about__text reveal">
+        <p class="script">od {site.founded}. godine</p>
+        <h2>Meso spremljeno onako kako se nekad spremalo</h2>
+        <p>Naša priča počinje s ljubavlju prema zanatu prerade mesa. Specijalizirani smo za svježe halal meso i suhomesnate proizvode pripremljene prema provjerenim tradicionalnim metodama: od ovčije i jareće stelje, preko zeničke hadžijske sudžuke, do hladnih plata za svečani sto.</p>
+        <p>Proizvodnja je pod HACCP standardom, a svi proizvodi nose halal certifikat. Već četvrt stoljeća gradimo povjerenje porodica širom Bosne i Hercegovine.</p>
+        <div class="stats">
+          <div class="stat"><strong>{site.founded}</strong><span>Godina osnivanja</span></div>
+          <div class="stat"><strong>2×</strong><span>Najbolja sudžuka u BiH</span></div>
+          <div class="stat"><strong>{site.facebook.followers}</strong><span>Pratilaca na Facebooku</span></div>
+        </div>
+      </div>
+      <div class="collage reveal" aria-hidden="true">
+        <img class="collage__a" src="/assets/img/suho-meso-presjek.webp" alt="" loading="lazy">
+        <img class="collage__b" src="/assets/img/ig-kaurma-visi.webp" alt="" loading="lazy">
+        <img class="collage__c" src="/assets/img/sudzuk-kolut.webp" alt="" loading="lazy">
+        <img class="collage__badge" src="/assets/img/znak-suseno-crveni.webp" alt="" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CERTIFIKATI ============ -->
+  <section class="trust" aria-label="Zašto Meša">
+    <div class="wrap trust__grid">
+      <div class="trust__item">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 4l16 6v12c0 10-7 18-16 22C15 40 8 32 8 22V10l16-6z"/><path d="M17 24l5 5 10-11"/></svg>
+        <div><h3>HACCP certifikat</h3><p>Najviši standardi higijene i sigurnosti hrane.</p></div>
+      </div>
+      <div class="trust__item">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="18"/><path d="M30 14a11 11 0 1 0 0 20 9 9 0 1 1 0-20z"/></svg>
+        <div><h3>Halal certifikat</h3><p>Svi naši proizvodi su halal certificirani.</p></div>
+      </div>
+      <div class="trust__item">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 38l12-20 8 12 5-7 11 15z"/><circle cx="34" cy="12" r="4"/></svg>
+        <div><h3>Sušeno na Vjetrenicama</h3><p>Domaće, po recepturama koje pamtimo.</p></div>
+      </div>
+      <div class="trust__item">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M4 14h24v18H4zM28 20h9l7 7v5H28z"/><circle cx="13" cy="35" r="4"/><circle cx="36" cy="35" r="4"/></svg>
+        <div><h3>Dostava za cijelu BiH</h3><p>Naručite telefonom, šaljemo na vašu adresu.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROIZVODI ============ -->
+  <section class="products" id="proizvodi">
+    <div class="products__bg" aria-hidden="true"></div>
+    <div class="wrap">
+      <header class="section-head section-head--light reveal">
+        <p class="script script--light">naša ponuda</p>
+        <h2>Više od obične mesnice</h2>
+        <p>Svaki proizvod izrađujemo s pažnjom, kako bismo vam donijeli autentične okuse domaće kuhinje.</p>
+      </header>
+      <div class="cards">
+        {products.map(p => <ProductCard product={p} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SUDŽUKA ============ -->
+  <section class="feature topo">
+    <div class="wrap feature__grid">
+      <div class="feature__media reveal">
+        <img src="/assets/img/sudzuk-daska.webp" alt="Narezana hadžijska sudžuka na dasci" loading="lazy">
+        <div class="feature__seal"><strong>2×</strong><span>najbolja<br>u BiH</span></div>
+      </div>
+      <div class="feature__text reveal">
+        <p class="script">naš ponos</p>
+        <h2>Hadžijska sudžuka koja je dva puta pobijedila</h2>
+        <p>Naša hadžijska sudžuka dva puta je proglašena najboljom u Bosni i Hercegovini. Recept se ne mijenja. Biramo meso, začinimo ga kao nekad i pustimo vrijeme da odradi svoje.</p>
+        <ul class="checks">
+          <li>Domaća receptura, bez prečica</li>
+          <li>Halal i HACCP certificirana proizvodnja</li>
+          <li>Idealna za meze, doručak i poklon</li>
+        </ul>
+        <a href={site.phone.href} class="btn btn--red">Naruči sudžuku</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AKCIJA ============ -->
+  <section class="promo">
+    <div class="wrap promo__inner">
+      <div>
+        <p class="script script--light">opet u ponudi</p>
+        <h2>Domaća starinska kaurma: <span>10 KM/kg</span></h2>
+        <p>Količine su ograničene, pa požurite i vi po svoju porciju ove ukusne poslastice!</p>
+      </div>
+      <a href={site.phone.href} class="btn btn--white">Rezerviši porciju</a>
+    </div>
+  </section>
+
+  <!-- ============ SLOGAN ============ -->
+  <section class="quote">
+    <div class="quote__bg" aria-hidden="true"></div>
+    <div class="wrap quote__inner reveal">
+      <p class="script script--light">naš slogan</p>
+      <blockquote>„Domaće je domaće.“</blockquote>
+      <p>Proizvodi koji podsjećaju na djetinjstvo, porodicu i autentične bosanske ukuse.</p>
+    </div>
+  </section>
+
+  <!-- ============ NARUDŽBA ============ -->
+  <section class="order topo" id="narudzba">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <p class="script">dostava za cijelu BiH</p>
+        <h2>Kako naručiti</h2>
+        <p>Bez obzira jeste li u Zenici, Sarajevu ili Bihaću, Meša stiže do vas.</p>
+      </header>
+      <ol class="steps">
+        <li class="step reveal"><span class="step__n">01</span><h3>Pozovite nas</h3><p>Nazovite <a href={site.phone.href}>{site.phone.label}</a> ili nam pišite na Instagram i Facebook.</p></li>
+        <li class="step reveal"><span class="step__n">02</span><h3>Dogovorimo narudžbu</h3><p>Izaberite proizvode i količinu, a mi ćemo vam rado savjetovati.</p></li>
+        <li class="step reveal"><span class="step__n">03</span><h3>Dostava na adresu</h3><p>Paket šaljemo na vašu adresu bilo gdje u Bosni i Hercegovini.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ GALERIJA ============ -->
+  <section class="gallery" id="galerija">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <p class="script">iz naše radnje</p>
+        <h2>Pratite nas na Instagramu</h2>
+        <p><a href={site.instagram.url} target="_blank" rel="noopener">{site.instagram.handle}</a> · {site.instagram.followers} pratilaca</p>
+      </header>
+      <div class="gallery__grid">
+        {gallery.map(g => (
+          <a href={site.instagram.url} target="_blank" rel="noopener" class:list={['g', { 'g--tall': g.tall }]}>
+            <img src={`/assets/img/${g.image}`} alt={g.alt} loading="lazy">
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ KONTAKT ============ -->
+  <section class="contact" id="kontakt">
+    <div class="wrap contact__grid">
+      <div class="contact__info reveal">
+        <p class="script script--light">svratite do nas</p>
+        <h2>Naše poslovnice</h2>
+        {locations.map(l => (
+          <div class="loc"><h3>{l.name}</h3><p>{l.address}</p></div>
+        ))}
+        <ul class="contact__list">
+          <li><Icon name="phone" /><span><a href={site.phone.href}>{site.phone.label}</a> · <a href={site.phone2.href}>{site.phone2.label}</a></span></li>
+          <li><Icon name="clock" /><span>Radno vrijeme: {site.hours}</span></li>
+          <li><Icon name="mail" /><span><a href={`mailto:${site.email}`}>{site.email}</a></span></li>
+        </ul>
+        <div class="contact__actions">
+          <a href={site.phone.href} class="btn btn--red">Pozovi i naruči</a>
+          <a href={site.mapsUrl} target="_blank" rel="noopener" class="btn btn--ghost">Upute do radnje</a>
+        </div>
+      </div>
+      <div class="contact__map reveal">
+        <iframe title="Mapa — Meša, Vjetrenice 28, Zenica" src={site.mapsEmbed} loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</Layout>

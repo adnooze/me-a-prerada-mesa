@@ -1,0 +1,29 @@
+---
+import { site } from '../data/site';
+const year = new Date().getFullYear();
+---
+<footer class="footer">
+  <div class="footer__illus" aria-hidden="true"></div>
+  <div class="wrap footer__grid">
+    <div class="footer__brand">
+      <img src="/assets/img/logo-bijeli.png" alt="Meša prerada mesa" width="840" height="484" loading="lazy">
+      <p>Mesarski obrt „Meša“: tradicija, kvalitet, domaće od {site.founded}. godine.</p>
+    </div>
+    <div>
+      <h4>Navigacija</h4>
+      <ul><li><a href="#o-nama">O nama</a></li><li><a href="#proizvodi">Proizvodi</a></li><li><a href="#narudzba">Dostava</a></li><li><a href="#kontakt">Kontakt</a></li></ul>
+    </div>
+    <div>
+      <h4>Kontakt</h4>
+      <ul><li>{site.address}</li><li><a href={site.phone.href}>{site.phone.label}</a></li><li><a href={`mailto:${site.email}`}>{site.email}</a></li></ul>
+    </div>
+    <div>
+      <h4>Pratite nas</h4>
+      <ul><li><a href={site.instagram.url} target="_blank" rel="noopener">Instagram</a></li><li><a href={site.facebook.url} target="_blank" rel="noopener">Facebook</a></li></ul>
+    </div>
+  </div>
+  <div class="wrap footer__bottom">
+    <span>© {year} {site.name} · vl. {site.owner}</span>
+    <a href="#top">Nazad na vrh ↑</a>
+  </div>
+</footer>

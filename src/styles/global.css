@@ -146,7 +146,7 @@ p { margin: 0 0 1em; }
   background:
     linear-gradient(180deg, rgba(21,14,13,.82) 0%, rgba(21,14,13,.55) 45%, rgba(21,14,13,.9) 100%),
     radial-gradient(ellipse at 50% 60%, rgba(160,20,14,.35), transparent 70%),
-    url("assets/img/suho-meso-trio.webp") center 40% / cover no-repeat;
+    url("/assets/img/suho-meso-trio.webp") center 40% / cover no-repeat;
   animation: heroZoom 18s var(--ease) both;
 }
 @keyframes heroZoom { from { transform: scale(1.08); } to { transform: scale(1); } }
@@ -163,7 +163,7 @@ p { margin: 0 0 1em; }
 .hero__actions { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
 
 /* ---------- Topographic background ---------- */
-.topo { background: #fff url("assets/img/topo.svg") center / 600px repeat; }
+.topo { background: #fff url("/assets/img/topo.svg") center / 600px repeat; }
 
 /* ---------- About ---------- */
 .about { padding: clamp(80px, 10vw, 130px) 0; }
@@ -219,7 +219,7 @@ p { margin: 0 0 1em; }
   position: absolute; inset: 0 0 auto 0; height: 640px; z-index: -1;
   background:
     linear-gradient(180deg, rgba(21,14,13,.65), var(--dark) 100%),
-    url("assets/img/susionica-crvena.webp") center / cover no-repeat;
+    url("/assets/img/susionica-crvena.webp") center / cover no-repeat;
   filter: saturate(.55);
 }
 .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
@@ -276,7 +276,7 @@ p { margin: 0 0 1em; }
 .promo { background: var(--red); color: #fff; position: relative; overflow: hidden; }
 .promo::before {
   content: ""; position: absolute; inset: 0;
-  background: url("assets/img/topo.svg") center / 600px;
+  background: url("/assets/img/topo.svg") center / 600px;
   filter: invert(1); opacity: .5; pointer-events: none;
 }
 .promo__inner { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 30px; padding-block: 56px; }
@@ -291,7 +291,7 @@ p { margin: 0 0 1em; }
   position: absolute; inset: 0; z-index: -1;
   background:
     linear-gradient(rgba(21,14,13,.72), rgba(21,14,13,.82)),
-    url("assets/img/nekad-stala.webp") center 35% / cover no-repeat fixed;
+    url("/assets/img/nekad-stala.webp") center 35% / cover no-repeat fixed;
 }
 .quote blockquote { margin: 0 0 16px; font: 700 clamp(44px, 8vw, 96px)/1 var(--f-head); text-transform: uppercase; letter-spacing: .01em; }
 .quote__inner p:last-child { max-width: 520px; margin: 0 auto; color: rgba(255,255,255,.8); }
@@ -339,7 +339,7 @@ p { margin: 0 0 1em; }
 .footer { position: relative; background: #0e0908; color: rgba(255,255,255,.6); padding-top: 120px; font-size: 15px; overflow: hidden; }
 .footer__illus {
   position: absolute; inset: 0 0 auto; height: 160px;
-  background: url("assets/img/ilustracija-crvena.webp") center top / 1400px auto repeat-x;
+  background: url("/assets/img/ilustracija-crvena.webp") center top / 1400px auto repeat-x;
   opacity: .22;
 }
 .footer__grid { position: relative; display: grid; grid-template-columns: 1.6fr 1fr 1.2fr 1fr; gap: 40px; padding-bottom: 50px; }

@@ -1,0 +1,37 @@
+---
+import Icon from './Icon.astro';
+import { site, nav } from '../data/site';
+---
+<header class="site-header" id="top">
+  <div class="topbar">
+    <div class="wrap topbar__inner">
+      <div class="topbar__info">
+        <a href={site.phone.href}>Tel: {site.phone.label}</a>
+        <span class="sep" aria-hidden="true"></span>
+        <span>Radno vrijeme: {site.hours}</span>
+        <span class="sep hide-sm" aria-hidden="true"></span>
+        <span class="hide-sm">{site.address}</span>
+      </div>
+      <div class="topbar__social">
+        <a href={site.instagram.url} target="_blank" rel="noopener" aria-label="Instagram"><Icon name="instagram" /></a>
+        <a href={site.facebook.url} target="_blank" rel="noopener" aria-label="Facebook"><Icon name="facebook" /></a>
+      </div>
+    </div>
+  </div>
+
+  <nav class="nav" aria-label="Glavna navigacija">
+    <div class="wrap nav__inner">
+      <a href="#top" class="nav__logo" aria-label="Meša prerada mesa — početna">
+        <img src="/assets/img/logo-bijeli.png" alt="Meša prerada mesa" width="840" height="484">
+      </a>
+      <button class="nav__toggle" aria-expanded="false" aria-controls="menu" aria-label="Otvori meni">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__menu" id="menu">
+        {nav.map((item, i) => <li><a href={item.href} class:list={{ 'is-active': i === 0 }}>{item.label}</a></li>)}
+        <li class="nav__cta-mobile"><a href={site.phone.href} class="btn btn--red">Naruči telefonom</a></li>
+      </ul>
+      <a href={site.phone.href} class="btn btn--outline nav__cta">Naruči odmah</a>
+    </div>
+  </nav>
+</header>
